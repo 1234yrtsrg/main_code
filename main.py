@@ -2,9 +2,15 @@ import os
 import warnings
 from sklearn.exceptions import ConvergenceWarning
 from pipeline.orchestrator import NestedCVOrchestrator
+from tabpfn import TabPFNRegressor
 
 os.environ["PYTHONWARNINGS"] = "ignore"
 os.environ['XDG_CACHE_HOME'] = '/storage/v-jinpewang/az_workspace/zhanglin/reproduction/specml/tabpfn_cache'
+print("正在预先下载并缓存 TabPFN 模型...")
+dummy_model = TabPFNRegressor()
+dummy_model.fit(np.array([[0.0]]), np.array([0.0]))
+print("模型下载与缓存完成！")
+
 
 def suppress_warnings():
     warnings.filterwarnings("ignore", category=ConvergenceWarning)
