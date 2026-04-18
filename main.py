@@ -3,6 +3,7 @@ import warnings
 from sklearn.exceptions import ConvergenceWarning
 from pipeline.orchestrator import NestedCVOrchestrator
 from tabpfn import TabPFNRegressor
+import numpy as np
 
 os.environ["PYTHONWARNINGS"] = "ignore"
 os.environ['XDG_CACHE_HOME'] = '/storage/v-jinpewang/az_workspace/zhanglin/reproduction/specml/tabpfn_cache'
