@@ -4,6 +4,7 @@ from sklearn.exceptions import ConvergenceWarning
 from pipeline.orchestrator import NestedCVOrchestrator
 
 os.environ["PYTHONWARNINGS"] = "ignore"
+os.environ['XDG_CACHE_HOME'] = '/storage/v-jinpewang/az_workspace/zhanglin/reproduction/specml/tabpfn_cache'
 
 def suppress_warnings():
     warnings.filterwarnings("ignore", category=ConvergenceWarning)
