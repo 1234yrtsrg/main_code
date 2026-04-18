@@ -4,7 +4,9 @@ from config import Config
 
 class FeatureSelector:
     @staticmethod
-    def select_shared_bands_multitask(X_train, Y_train, max_features=Config.SHARED_MAX_FEATURES):
+    def select_shared_bands_multitask(X_train, Y_train, max_features=None):
+        if max_features is None:
+            max_features = Config.SHARED_MAX_FEATURES
         mtl = MultiTaskLassoCV(
             alphas=np.logspace(-4, 1, 15),
             cv=Config.INNER_SPLITS,
